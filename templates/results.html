@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>RESULTAAT</title>
+</head>
+<body>
+    <div id="primary_container">
+        <img src="../static/text.png" class="text_style">
+        
+    <div id="secondary_container">
+        <div id="resultmaintext">
+        <H2>JOU GESCHATTE LEEFTIJD IS:</H2>
+        <H1 id="resulttext">{{ result }}</H1>
+        </div>
+        
+        
+        {% if result <= 5 and choice == 0 %}
+            <img src="../static/pikselbabym.png" id="resultimage">
+        {% elif result <= 5 and choice == 1 %}
+            <img src="../static/pikselbabyg-kopie.png" id="resultimage">
+        {% elif result <= 10 and choice == 0 %}
+            <img src="../static/pikselkidm.png" id="resultimage">
+        {% elif result <= 10 and choice == 1 %}
+            <img src="../static/pikselkidg.png" id="resultimage">
+        {% elif result <= 20 and choice == 0 %}
+            <img src="../static/pikselboy.png" id="resultimage">
+        {% elif result <= 20 and choice == 1 %}
+            <img src="../static/pikselgirl.png" id="resultimage">
+        {% elif result <= 30 and choice == 0 %}
+            <img src="../static/pikseladom.png" id="resultimage">
+        {% elif result <= 30 and choice == 1 %}
+            <img src="../static/pikseladog.png" id="resultimage">
+        {% elif result <= 50 and choice == 0 %}
+            <img src="../static/pikseladultm.png" id="resultimage">
+        {% elif result <= 50 and choice == 1 %}
+            <img src="../static/pikseladultg.png" id="resultimage">
+        {% elif result <= 65 and choice == 0 %}
+            <img src="../static/pikselman.png" id="resultimage">
+        {% elif result <= 65 and choice == 1 %}
+            <img src="../static/pikselwomen.png" id="resultimage">
+        {% elif result > 65 and choice == 0 %} 
+            <img src="../static/pikselgrandm.png" id="resultimage">
+        {% elif result > 65 and choice == 1 %} 
+            <img src="../static/pikselgrandg.png" id="resultimage">      
+        {% else %}    
+            <img src="../static/dna_loading.gif" id="resultimage">
+        {% endif %}
+        
+    </div>
+    
+    <div id="tertiary_container">
+       
+        <button class="button" onclick="window.location.href='/';">
+            Home →
+          </button>
+          <button class="button" onclick="window.location.href='/data';">
+            Data →
+          </button>
+          <button class="button" onclick="window.location.href='/alg';">
+            algorithmen →
+          </button>
+        
+    </div>
+    </div>
+   
+</body>
+
+<script>
+    
+</script>
+</html>

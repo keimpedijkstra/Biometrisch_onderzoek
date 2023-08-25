@@ -1,0 +1,181 @@
+<!--TODO: replace age with hartrate-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Vragen</title>
+</head>
+<body>
+    <div id="primary_container">
+    
+    <img src="../static/text.png" class="text_style">
+
+    <div id="question_container">
+        <div class="card" id="q1">
+            <div class="qcontainer">
+            <p class="qtext">Wat is je lengte(cm)?</p>
+            <input class="ninput" type="number" id="height" name="height" min="1" max="300" placeholder="1">
+            </div>
+            <button class="long-arrow-right" id="q1b"></button>
+        </div>
+        <div class="card" id="q2">
+            <div class="qcontainer">
+            <p class="qtext">Wat is je hartslag?</p>
+            <input class="ninput" type="number" id="age" name="age" min="0" max="150" placeholder="0">
+            </div>
+            <button class="long-arrow-right" id="q2b"></button>
+            
+        </div>
+        <div class="card" id="q3">
+            <div class="qcontainer">
+            <p class="qtext">Wat is je haarkleur?</p>
+            <div class="hairradio"><input type="radio" id="blonde" name="haircolor" value="1" checked></div>
+            <div class="hairradio"><input type="radio" id="brown" name="haircolor" value="2"></div>
+            <div class="hairradio"><input type="radio" id="red" name="haircolor" value="3"></div>
+            </div>
+            <button class="long-arrow-right" id="q3b"></button>
+            
+        </div>
+        <div class="card" id="q4">
+            <div class="qcontainer">
+            <p class="qtext">Hoeveel uur slaap je per nacht?</p>
+            <div class="sleepradio"><input type="radio" id="a" name="hoursleep" value="1" class="sleepradioq" checked>
+                <label class="label" for="a">5-6</label>
+            </div>
+            
+            <div class="sleepradio"><input type="radio" id="b" name="hoursleep" value="2" class="sleepradioq">
+                <label class="label" for="b">6-7</label>
+            </div>
+            
+            <div class="sleepradio"><input type="radio" id="c" name="hoursleep" value="3" class="sleepradioq">
+                <label class="label" for="c">7-8</label></div>
+            
+            <div class="sleepradio"><input type="radio" id="d" name="hoursleep" value="4" class="sleepradioq">
+                <label class="label" for="d">8-9</label></div>
+            
+            <div class="sleepradio"><input type="radio" id="e" name="hoursleep" value="5" class="sleepradioq">
+                <label class="label" for="e">9+</label></div>
+            
+            </div>
+            <button class="long-arrow-right" id="q4b"></button>
+        </div>
+        <div class="card" id="q5">
+            <div class="qcontainer">
+            <p class="qtext">Hoeveel uur sport je per week?</p>
+            <div class="sleepradio"><input type="radio" id="f" name="hoursports" value="1" class="sleepradioq" checked>
+            <label class="label" for="f">0</label></div>
+
+            <div class="sleepradio"><input type="radio" id="g" name="hoursports" value="2" class="sleepradioq">
+            <label class="label" for="g">0-2</label></div>
+
+            <div class="sleepradio"><input type="radio" id="h" name="hoursports" value="3" class="sleepradioq">
+            <label class="label" for="h">2-4</label></div>
+
+            <div class="sleepradio"><input type="radio" id="i" name="hoursports" value="4" class="sleepradioq">
+            <label class="label" for="i">4-6</label></div>
+
+            <div class="sleepradio"><input type="radio" id="j" name="hoursports" value="5" class="sleepradioq">
+            <label class="label" for="j">6+</label></div>
+            </div>
+            <button class="long-arrow-right" id="q5b"></button>
+        </div>
+
+        <div class="svg-wrapper" id="bresults">
+            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="150" />
+              <div id="text">
+                <a ><span class="spot"></span>RESULTATEN</a>
+              </div>
+            </svg>
+          </div>
+        
+    </div>
+
+    <img src="../static/hhs.png" id="hhs">  
+
+    </div>
+
+    <script>
+    var q1 = document.getElementById("q1");
+    var q1b = document.getElementById("q1b");    
+    var q2 = document.getElementById("q2");
+    var q2b = document.getElementById("q2b");
+    var q3 = document.getElementById("q3");
+    var q3b = document.getElementById("q3b");
+    var q4 = document.getElementById("q4");
+    var q4b = document.getElementById("q4b");
+    var q5 = document.getElementById("q5");
+    var q5b = document.getElementById("q5b");
+    var results = document.getElementById("bresults")
+
+    q1b.addEventListener("click", function(){ myFunction(q1); });
+    q2b.addEventListener("click", function(){ myFunction(q2); });
+    q3b.addEventListener("click", function(){ myFunction(q3); });
+    q4b.addEventListener("click", function(){ myFunction(q4); });
+    q5b.addEventListener("click", function(){ myFunction(q5); });
+
+    var str = ""
+    
+    q1b.addEventListener("click", function(){ valueAdder("height",1); });
+    q2b.addEventListener("click", function(){ valueAdder("age",1); });
+    q3b.addEventListener("click", function(){ valueAdder("haircolor",2); });
+    q4b.addEventListener("click", function(){ valueAdder("hoursleep",2); }); 
+    q5b.addEventListener("click", function(){ valueAdder("hoursports",2); });      
+
+    results.addEventListener("click", function(){ stringSender(); });
+
+    function myFunction(x) {
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.classList.add("dissapear");
+          setTimeout(displayChange, 500, x);
+        }
+      }
+
+    function displayChange(x){
+        x.style.display = "none";
+    }  
+
+    function valueAdder(x,y){
+        if (y === 1){
+            var value = document.getElementById(x).value;
+        }if(y === 2){
+            var l = document.getElementsByName(x);
+            for (i = 0; i < l.length; i++){
+                if (l[i].checked){
+                    value = l[i].value;
+                }
+            }
+        }
+        
+        str += value.toString();
+        str += ","
+        console.log(str)
+    }
+
+    function stringSender(){
+        $.ajax({
+                url: '/results',
+                type: 'POST',
+                data: { 'data': str },
+                success: function(response) {
+                    console.log("succes")
+                    console.log(response)
+                    document.write(response)
+                },
+                error: function(error) {
+                }
+            });
+        console.log("send");
+        console.log(str)
+    }
+
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,516 @@
+body{
+    background-color: #f2f2f2;
+}
+
+#primary_container {
+    background-color: #379CB3;
+    width: 90%;
+    position: relative;
+    margin: auto;
+    height: 900px;
+}
+
+/* BUTTON */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: right;
+  width: 75%;
+  float: right;
+  padding-top: 3%;
+  padding-right: 5%;
+}
+
+.cta {
+    display: flex;
+    padding: 10px 45px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: white;
+    background: #246473;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+}
+
+.cta:focus {
+   outline: none; 
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #13f2f2;
+}
+
+.cta span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.cta:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+  span {
+    transform: skewX(15deg) 
+  }
+
+  span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+  
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #13f2f2;
+    }
+    100% {
+        fill: white;
+    }
+}
+
+/* IMAGES */
+.text_style{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  padding-top: 20px;
+}
+
+.homescreencharacter{
+    all: unset;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+}
+
+#homescreencharacters{
+    width: 100%;
+    display: flex;
+    margin-bottom: 2%;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.active{
+    all: unset;
+    margin-left: auto;
+    margin-right: auto;
+    
+    animation-name: fade, grow;
+    animation-duration: 0.5s, 1s ;
+    transform: scale(1.25);
+}
+
+@keyframes fade {
+    from { opacity   : 0.5; }
+    to   { opacity   : 1; }
+}
+@keyframes grow {
+    from { transform: scale(1); }
+    to   { transform: scale(1.25); }
+}
+
+
+h2{
+    text-align: center;
+    padding-top: 5%;
+    color: #ffff;
+    padding-bottom: 2%;
+}
+.hhs{
+
+    float: left;
+}
+
+.piksel{
+    height: 350px;
+}
+
+/*QUESTIONCARDS*/
+
+#question_container{
+    width: 100%;
+    height: 600px;
+    border-style: dashed;
+    border-color: #379CB3;
+    position: relative;
+}
+
+.card{
+    background-color: #f2f2f2;
+    width: 700px;
+    height: 400px;
+    margin-left: 500px;
+    margin-top: 100px;
+    border-radius: 25px;
+    /*display: block;*/
+    position: absolute;
+}
+
+.long-arrow-right{
+  all: unset;
+  display: block;
+  float: right;
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+
+.long-arrow-right{
+ transform: rotate(135deg);
+}
+
+.long-arrow-right:hover{
+    border-top: 2px solid #13f2f2;
+    border-left: 2px solid #13f2f2;
+}
+
+.dissapear{
+    animation-name: fade2, displace;
+    animation-duration: 0.5s, 0.5s;
+    opacity: 0;
+}
+
+#q1{
+    display: block;
+    position: absolute;
+    z-index: 6;
+}
+#q2{
+    display: block;
+    z-index: 5;
+    position: absolute;
+}
+#q3{
+    display: block;
+    z-index: 4;
+    position: absolute;
+}
+#q4{
+    display: block;
+    z-index: 3;
+    position: absolute;
+}
+#q5{
+    display: block;
+    z-index: 2;
+    position: absolute;
+}
+
+@keyframes fade2 {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes displace {
+    from {margin-left: 500px;}
+    to {margin-left: 700px;}
+}
+
+
+.hidden{
+    display: none;
+}
+
+.qcontainer{
+    height: 350px;
+    width: 100%;
+    border-style: dashed;
+    border-color: #f2f2f2;
+    border-radius: 50px;
+}
+
+.qtext{
+    color: #246473;
+    text-align: center;
+    font-size: xx-large;
+}
+.ninput{
+    all: unset;
+    margin-left: 300px;
+    font-size: xx-large;
+    text-align: center;
+    width: 100px;
+    margin-top: 50px;
+
+    border-color: #379CB3;
+    border-style: solid;
+    border-width: 2px;
+    animation-name: borderanimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+ }
+
+ @keyframes borderanimation{
+    0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 #379CB3;
+	}
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px #379CB3;
+	}
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 #379CB3;
+	}
+ }
+
+ :root {
+    --form-control-color: rebeccapurple;
+  }
+  *,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+ input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+  color: currentColor;
+  width: 60px;
+  height: 60px;
+  
+  }
+  input[type="radio"] {
+    
+    display: grid;
+    place-content: center;
+  }
+  input[type="radio"]::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    border-style: solid;
+    border-color: black;
+  }
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+#blonde{
+    background-color: #debe99;
+    margin-left: auto;
+    margin-right: auto;
+}
+#brown{
+    background-color: #4f1a00;
+    margin-left: auto;
+    margin-right: auto;
+}
+#red{
+    background-color: #9a3300;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hairradio{
+    width: 33%;
+    float: left;
+    margin-top: 50px;
+}
+
+
+.sleepradio{
+    width: 20%;
+    float: left;
+    margin-top: 50px;
+    
+}
+.sleepradioq{
+    background-color: #246473;
+}
+
+#a, #b, #c, #d, #e, #f, #g, #h, #i, #j {
+    margin-left: auto;
+    margin-right: auto;
+}
+.label{
+    font-size: x-large;
+    color: white;
+    position: absolute;
+    /*top: 43%;
+    left: 7%;*/
+    margin-top: -45px;
+    margin-left: 55px;
+}
+
+/*Button*/
+  .spot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+  }
+ 
+  .svg-wrapper {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+  }
+
+  
+  #shape {
+    stroke-width: 6px;
+    fill: transparent;
+    stroke: #13f2f2;
+    stroke-dasharray: 85 400;
+    stroke-dashoffset: -220;
+    transition: 1s all ease;
+  }
+  
+  #text {
+    margin-top: -35px;
+    text-align: center;
+  }
+  
+  #text a {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.1em;
+  }
+
+  .svg-wrapper:hover #shape {
+    stroke-dasharray: 50 0;
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+    stroke: white;
+  }
+
+#resultimage {
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: pixelated;
+    
+    height: 400px;
+    width: auto;
+    
+    
+}
+
+H1{
+    text-align: center;
+    padding-top: 5px;
+    color: #ffff;
+    padding-bottom: 5px;
+}
+
+#secondary_container{
+    text-align: center;
+    width: 80%;
+    float: left;
+}
+
+#tertiary_container{
+    padding-top: 50px;
+    width: 20%;
+    float: left;
+}
+
+.button {
+    --font-color: #246473;
+    --bg-color: #fff;
+    --main-color: #246473;
+    width: 240px;
+    height: 60px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  
+  .button:hover {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+  }
+  
+#plot{
+    width: 50%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+}
+  
+#algtext{
+    width: 50%;
+    color: #fff;
+    float: left;
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+#alganimation{
+    image-rendering: pixelated;
+    height: 200px;
+    float: left;
+    padding-left: 10%;
+    margin-top: 2%;
+    display: block;
+}
+
